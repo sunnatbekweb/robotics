@@ -1,23 +1,23 @@
 #include <Arduino.h>
+#include <Servo.h>
 
-int a = 1;
+Servo door;
 
 void setup()
 {
+  door.attach(9);
   Serial.begin(9600);
-  pinMode(2, OUTPUT);
 }
 
 void loop()
 {
- int s = analogRead(A5);
+  int s = analogRead(A0);
   Serial.println(s);
 
-  if (s > 900){
-    digitalWrite(2, HIGH);
+  if (s > 500) {
+    door.write(90);
   } else {
-    digitalWrite(2, LOW);
+    door.write(0);
   }
-
-  delay(300);
+  delay(500);
 }
