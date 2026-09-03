@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <Servo.h>
 #include <DHT.h>
 #include <DHT_U.h>
 
